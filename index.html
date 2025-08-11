@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChatApp - Real-Time Messaging</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Login Screen -->
+        <div class="login-screen" id="loginScreen">
+            <div class="login-form">
+                <h1>ChatApp</h1>
+                <input type="text" id="usernameInput" placeholder="Enter your username" maxlength="20">
+                <button onclick="login()" id="loginBtn">Join Chat</button>
+            </div>
+        </div>
+
+        <!-- Sidebar -->
+        <div class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <div class="user-info">
+                    <div class="user-avatar" id="userAvatar"></div>
+                    <div>
+                        <div id="currentUsername">User</div>
+                        <small>Online</small>
+                    </div>
+                </div>
+                <button class="logout-btn" onclick="logout()">Logout</button>
+            </div>
+            <div class="room-list" id="roomList">
+                <!-- Rooms will be populated here -->
+            </div>
+        </div>
+
+        <!-- Chat Area -->
+        <div class="chat-area" id="chatArea">
+            <!-- Welcome Screen -->
+            <div class="welcome-screen" id="welcomeScreen">
+                <h2>Welcome to ChatApp</h2>
+                <p>Select a room from the sidebar to start chatting!<br>
+                Connect with friends and colleagues in real-time.</p>
+            </div>
+
+            <!-- Chat Interface -->
+            <div class="chat-interface hidden" id="chatInterface">
+                <div class="chat-header">
+                    <div class="chat-avatar" id="chatAvatar"></div>
+                    <div class="chat-info">
+                        <h2 id="chatRoomName">Room Name</h2>
+                        <p id="chatRoomInfo">Click to see room info</p>
+                    </div>
+                </div>
+
+                <div class="messages-container" id="messagesContainer">
+                    <!-- Messages will be populated here -->
+                </div>
+
+                <div class="typing-indicator hidden" id="typingIndicator">
+                    Someone is typing...
+                </div>
+
+                <div class="message-input-container">
+                    <input type="text" class="message-input" id="messageInput" placeholder="Type your message..." maxlength="500">
+                    <button class="send-btn" onclick="sendMessage()" id="sendBtn">➤</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
